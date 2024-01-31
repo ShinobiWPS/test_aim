@@ -1,10 +1,11 @@
+import { ROUTES } from '@/pages/routes'
 import { Link, Outlet } from 'react-router-dom'
 
 export default function Layout () {
 
 
 	return <>
-		<Link to={'counter'} >Counter</Link>
+		<Link to={ROUTES.COUNTER_PAGE} >Counter</Link>
 		<Outlet />
 	</>
 	{ /* <><div id="sidebar"></div><div id="content">

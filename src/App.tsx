@@ -1,31 +1,18 @@
 
-import { RouterProvider, createBrowserRouter } from 'react-router-dom'
+import router from '@/pages/routes'
+import store from '@/store'
+import { Provider } from 'react-redux'
+import { RouterProvider } from 'react-router-dom'
 import './App.css'
-import Layout from './components/layout.component'
-import CounterPage from './pages/counter.page'
-
-const router = createBrowserRouter([
-	{
-		id: 'root',
-		path: '/',
-		Component: Layout,
-		children: [
-			{
-				index: true,
-				path: 'counter',
-				Component: CounterPage
-			}
-		]
-	}
-])
 
 
 export default function App () {
 
-
 	return (
 		<>
-			<RouterProvider router={router} fallbackElement={<p>Loading...</p>} />
+			<Provider store={store}>
+				<RouterProvider router={router} fallbackElement={<p>Loading...</p>} />
+			</Provider>
 		</>
 	)
 
